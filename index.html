@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro Timer</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Pomodoro Timer</h1>
+        
+        <div class="timer-container">
+            <div class="timer-circle">
+                <span id="minutes">25</span>:<span id="seconds">00</span>
+            </div>
+            
+            <div class="progress-ring">
+                <svg class="progress" viewBox="0 0 100 100">
+                    <circle class="progress-ring-circle" cx="50" cy="50" r="45"/>
+                </svg>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button id="start">Почати</button>
+            <button id="pause" disabled>Пауза</button>
+            <button id="reset">Скинути</button>
+        </div>
+
+        <div class="settings">
+            <div class="time-settings">
+                <label>
+                    Робочий час (хв):
+                    <input type="number" id="workTime" value="25" min="1" max="60">
+                </label>
+                <label>
+                    Час відпочинку (хв):
+                    <input type="number" id="breakTime" value="5" min="1" max="30">
+                </label>
+            </div>
+        </div>
+
+        <div class="statistics">
+            <h2>Статистика</h2>
+            <div class="stats-container">
+                <div class="stat-item">
+                    <span>Завершені сесії:</span>
+                    <span id="completedSessions">0</span>
+                </div>
+                <div class="stat-item">
+                    <span>Загальний час роботи:</span>
+                    <span id="totalWorkTime">0 хв</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
